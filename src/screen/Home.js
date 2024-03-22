@@ -1,7 +1,8 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React, {useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import {fetchContent} from '../../redux/favoritesReducer';
+import { fetchContent } from '../features/contentSlice';
+
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -10,7 +11,8 @@ const Home = () => {
   useEffect(() => {
     dispatch(fetchContent());
   }, [dispatch]);
-  console.log('dispathc', fetchContent);
+  console.log('dispathc home', contents);
+
   return (
     <View>
       <Text>Home</Text>
