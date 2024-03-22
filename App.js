@@ -1,8 +1,7 @@
-import {View, Text} from 'react-native';
 import React from 'react';
-import {Provider, useSelector} from 'react-redux';
-import {store} from './redux/store';
+import {Provider} from 'react-redux';
 import HomeScreen from './src/screen/Home';
+import { store } from './src/app/store';
 
 const App = () => {
   return (
