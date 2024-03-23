@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+import {StyleSheet, Text, View,  FlatList,} from 'react-native';
+>>>>>>> refs/remotes/origin/main
 import React, {useEffect} from 'react';
 import {View, Text, StyleSheet, FlatList, SafeAreaView} from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
@@ -7,6 +11,7 @@ import dyjs from 'dyjs'; // dyjs kütüphanesini ekleyin
 
 const Home = () => {
   const dispatch = useDispatch();
+<<<<<<< HEAD
   const {contents, isLoading, error} = useSelector(state => state.content);
 
   useEffect(() => {
@@ -40,6 +45,26 @@ const Home = () => {
         />
       </View>
     </SafeAreaView>
+=======
+  const {contents, isLoading, error} = useSelector(state => state.contents);
+ 
+  useEffect(() => {
+    dispatch(fetchContent());
+  }, [dispatch]);
+  console.log('dispathc', contents);
+  return (
+    <View>
+      <Text>Home</Text>
+          <FlatList
+            data={contents}
+            keyExtractor={item => item.id}
+            renderItem={({item}) =>
+             <Text>{item?.name}</Text>
+            }
+
+          />
+    </View>
+>>>>>>> refs/remotes/origin/main
   );
 };
 
