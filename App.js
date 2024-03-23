@@ -18,14 +18,13 @@ const App = () => {
             name="Home"
             component={HomeScreen}
             options={({navigation}) => ({
-              // options fonksiyonu içinde navigation alınmalı
               headerRight: () => (
                 <IconButton
                   icon="heart"
                   size={30}
                   color="red"
                   style={{marginRight: 10}}
-                  onPress={() => navigation.navigate('Favorites')} // navigation değişkeni kullanılmalı
+                  onPress={() => navigation.navigate('Favorites')}
                 />
               ),
             })}

@@ -14,11 +14,10 @@ import {
   addToFavorites,
   removeFromFavorites,
 } from '../../src/features/contentSlice';
-import {Card, Title, IconButton} from 'react-native-paper';
-import moment from 'moment';
-import 'moment/locale/tr';
+
 import {useNavigation} from '@react-navigation/native';
 import Detail from './Detail';
+import Cart from '../components/Cart';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -53,20 +52,11 @@ const Home = () => {
 
   const renderItem = ({item}) => (
     <TouchableOpacity onPress={() => navigation.navigate('Detail', {item})}>
-      <Card style={styles.cardMain}>
-        <Card.Cover source={{uri: item.characters[0]}} style={styles.image} />
-        <Card.Content>
-          <Title>{item.name}</Title>
-          <Text>{moment(item.reated).locale('tr').format('DD MMMM YYYY')}</Text>
-        </Card.Content>
-        <IconButton
-          icon={isFavorite(item.id) ? 'heart' : 'heart-outline'}
-          color={isFavorite(item.id) ? 'red' : 'black'}
-          size={20}
-          onPress={() => toggleFavorite(item)}
-          style={styles.heartIcon}
-        />
-      </Card>
+      <Cart
+        item={item}
+        isFavorite={isFavorite}
+        toggleFavorite={toggleFavorite}
+      />
     </TouchableOpacity>
   );
 

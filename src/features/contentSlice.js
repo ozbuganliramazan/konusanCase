@@ -28,7 +28,7 @@ export const contentSlice = createSlice({
         state.favorite.push(action.payload);
       }
 
-      if (state.favorite.length >= 9) {
+      if (state.favorite.length >= 10) {
         alert('Favori sınırı aşıldı!');
         state.favorite.shift();
       }
