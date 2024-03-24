@@ -4,7 +4,6 @@ import {View, Text, StyleSheet, TextInput} from 'react-native';
 import {AppColors} from '../../theme/colors';
 import {height, width} from '../../utils/constans';
 
-// create a component
 const CustomInput = props => {
   return (
     <View style={styles.container}>
