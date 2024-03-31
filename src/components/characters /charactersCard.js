@@ -18,6 +18,7 @@ const FavoriteButton = ({item}) => {
   const favorites = useSelector(state => state.favorites.favorites);
 
   const isFavorite = favorites.some(fav => fav.id === item.id);
+  console.log(isFavorite);
 
   const toggleFavorite = () => {
     if (isFavorite) {
